@@ -1,0 +1,16 @@
+[submodule "Backend"]
+	path = Backend
+	url = https://github.com/BBD-Freelo/Backend.git
+	branch = main
+[submodule "Frontend"]
+	path = Frontend
+	url = https://github.com/BBD-Freelo/Frontend.git
+	branch = main
+[submodule "Database"]
+	path = Database
+	url = https://github.com/BBD-Freelo/Database.git
+	branch = main
+[submodule "Terraform"]
+	path = Terraform
+	url = https://github.com/BBD-Freelo/Terraform.git
+	branch = main
