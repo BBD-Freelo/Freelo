@@ -1,0 +1,46 @@
+services:
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=some_pass
+      - POSTGRES_DB=dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./Database/tables.sql:/docker-entrypoint-initdb.d/tables.sql
+    networks:
+      - backend-network
+      - postgres-network
+
+  backend:
+    build: ./Backend
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    networks:
+      - backend-network
+
+  frontend:
+    build: ./Frontend
+    ports:
+      - "8080:80"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user-name@domain-name.com
+      PGADMIN_DEFAULT_PASSWORD: strong-password
+    ports:
+      - "5050:80"
+    networks:
+      - postgres-network
+    depends_on:
+      - postgres
+
+networks:
+  backend-network:
+    driver: bridge
+  postgres-network:
+    driver: bridge
