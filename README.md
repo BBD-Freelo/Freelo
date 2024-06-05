@@ -6,7 +6,7 @@
 To get started, clone this repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/BBD-Freelo/Freelo.git
+git clone --recurse-submodules https://github.com/BBD-Freelo/Freelo.git
 ```
 
 ### Running the Containerized App 🐳
