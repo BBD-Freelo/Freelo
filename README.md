@@ -42,3 +42,11 @@ When you're done using the application and want to clean up, you can delete the 
 ```bash
 docker-compose down -v
 ```
+
+### Mock users
+In case you want to add some collaborators to your boards we've provided 5 mock users
+- user1@example.com
+- user2@example.com
+- user3@example.com
+- user4@example.com
+- user5@example.com

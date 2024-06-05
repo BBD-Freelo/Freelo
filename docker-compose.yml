@@ -9,6 +9,7 @@ services:
       - "5432:5432"
     volumes:
       - ./Database/tables.sql:/docker-entrypoint-initdb.d/tables.sql
+      - ./Database/addUsers.sql:/docker-entrypoint-initdb.d/updateUsers.sql
     networks:
       - backend-network
       - postgres-network
